@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"]
+      }
+    },
+    "include": ["src/**/*.js", "src/**/*.d.ts"],
+    "exclude": ["node_modules"]
+  }
