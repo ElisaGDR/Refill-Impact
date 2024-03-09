@@ -2,7 +2,7 @@
 
 <template>
     <div class="calculate-button">
-      <button @click="calculateImpact" class="btn btn-primary">Calculate Impact</button>
+      <button @click="calculateImpact" class="btn btn-primary">Let's see your Impact!</button>
     </div>
   </template>
   

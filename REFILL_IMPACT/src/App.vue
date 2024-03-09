@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <InputBox v-model="refillCount" />
-    <CalculateButton @click="calculateImpact" />
+    <InputBox @refill-count-change="updateRefillCount" />
+    <CalculateButton @calculateImpact="calculateImpact" />
     <ImpactDisplay
       :bottlesSaved="bottlesSaved"
       :plasticSaved="plasticSaved"
@@ -34,11 +34,22 @@ export default {
     };
   },
   methods: {
+    updateRefillCount(newRefillCount) {
+      this.refillCount = newRefillCount;
+    },
     calculateImpact() {
-      // Implement the impact calculation logic here
+      // Realizar los cálculos
+      const bottlesPerRefill = 2;
+      const plasticPerBottle = 0.012; // kg
+      const carbonPerBottle = 0.08; // kg CO2
+
+      // Calcula el impacto
+      this.bottlesSaved = this.refillCount * bottlesPerRefill;
+      this.plasticSaved = this.bottlesSaved * plasticPerBottle;
+      this.carbonSaved = this.bottlesSaved * carbonPerBottle;
     },
     shareImpact() {
-      // Implement the sharing functionality using Firebase
+      // Implementa aquí la lógica para compartir utilizando Firebase
     },
   },
 };
@@ -47,3 +58,4 @@ export default {
 <style>
 /* Add your global styles here */
 </style>
+
