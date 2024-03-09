@@ -2,7 +2,7 @@
 
 <template>
     <div class="calculate-button">
-      <button @click="calculateImpact" class="btn btn-primary">Let's see your Impact!</button>
+      <button @click="calculateImpact" class="btn btn-success">Let's see your Impact!</button>
     </div>
   </template>
   
@@ -20,7 +20,10 @@
   <style scoped>
   /* Estilos específicos del componente */
   .calculate-button {
-    margin-bottom: 20px;
-  }
+    margin-bottom: 40px;
+    border-radius: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2%;
+   }
   </style>
   

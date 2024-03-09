@@ -2,12 +2,13 @@
 
 <template>
   <div>
-    <label for="refillCount">Number of Refills:</label>
+    <label for="refillCount">Insert the number of your Water Refills:</label>
+    <br>
     <input
       type="number"
       id="refillCount"
       v-model="refillCount"
-      placeholder="Enter the number of refills"
+      placeholder="Enter the number"
       @input="emitRefillCountChange"
     />
   </div>
@@ -32,12 +33,18 @@ export default {
 /* Add your component-specific styles here */
 label {
   font-weight: bold;
-  margin-bottom: 8px;
+  color: beige;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 30px;
 }
 input {
-  padding: 8px;
-  width: 100%;
+  padding: 4px;
+  width: 20%;
   box-sizing: border-box;
+  text-align: center;
+  background-color: beige; 
+  border-radius: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 </style>
 

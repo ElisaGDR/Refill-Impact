@@ -2,7 +2,7 @@
 
 <template>
     <div class="share-button">
-      <button @click="shareImpact" class="btn btn-success">Share Impact</button>
+      <button @click="shareImpact" class="btn btn-success">Share your Impact</button>
       <div v-if="shareLink" class="share-link">
         <p>Share this link:</p>
         <div class="input-group">
@@ -39,19 +39,10 @@
   <style scoped>
   /* Estilos específicos del componente */
   .share-button {
-    margin-bottom: 20px;
-  }
-  
-  .share-link {
-    margin-top: 10px;
-  }
-  
-  .input-group {
-    margin-top: 10px;
-  }
-  
-  .input-group button {
-    cursor: pointer;
-  }
+    margin-bottom: 40px;
+    border-radius: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2%;
+   }
   </style>
   
