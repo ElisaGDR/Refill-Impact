@@ -3,5 +3,10 @@
     "bootstrap": "^5.3.3",
     "vue-countup-v2": "^4.0.0",
     "vue-number-roller": "^1.0.3"
+  }, 
+  "scripts": {
+    "dev": "create-vite",
+    "build": "vite build",
+    "serve": "vite preview"
   }
 }
