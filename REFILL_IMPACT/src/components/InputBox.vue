@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add your component-specific styles here */
+/* Specific component styles */
 label {
   font-weight: bold;
   color: beige;
@@ -45,6 +45,9 @@ input {
   background-color: beige; 
   border-radius: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input::placeholder {
+  font-size: 0.5em; 
 }
 </style>
 

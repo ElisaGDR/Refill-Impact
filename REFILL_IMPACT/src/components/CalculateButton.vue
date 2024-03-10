@@ -10,20 +10,22 @@
   export default {
     methods: {
       calculateImpact() {
-        // Lógica de cálculo del impacto
-        this.$emit('calculate-impact'); // Emite un evento para notificar al componente padre
+        // Impact calculate logic
+        this.$emit('calculate-impact'); // Event to notify the father component
       },
     },
   };
   </script>
   
   <style scoped>
-  /* Estilos específicos del componente */
+  /* Specific component styles */
   .calculate-button {
     margin-bottom: 40px;
-    border-radius: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 2%;
+   }
+   .btn {
+    border-radius: 50px;
    }
   </style>
   

@@ -6,15 +6,3 @@ body {
   min-height: 100vh;
   background-color: #001f3f !important;
 }
-
-#app {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 4rem;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-input::placeholder {
-  font-size: 0.5em; 
-}

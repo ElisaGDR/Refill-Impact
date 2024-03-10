@@ -2,12 +2,9 @@
   <div id="app">
     <InputBox @refill-count-change="updateRefillCount" />
     <CalculateButton @calculateImpact="calculateImpact" />
-    <ImpactDisplay
-      :bottlesSaved="bottlesSaved"
-      :plasticSaved="plasticSaved"
-      :carbonSaved="carbonSaved"
-    />
-    <ShareButton :shareLink="shareLink" @click="shareImpact" />
+    <ImpactDisplay :bottlesSaved="bottlesSaved" :plasticSaved="plasticSaved" :carbonSaved="carbonSaved" />
+    <!-- Update the listener to use the correct event name -->
+    <ShareButton :shareLink="shareLink" @share-impact="shareImpact" />
   </div>
 </template>
 
@@ -16,6 +13,7 @@ import InputBox from './components/InputBox.vue';
 import CalculateButton from './components/CalculateButton.vue';
 import ImpactDisplay from './components/ImpactDisplay.vue';
 import ShareButton from './components/ShareButton.vue';
+import { database } from './Firebase.js';
 
 export default {
   components: {
@@ -38,24 +36,42 @@ export default {
       this.refillCount = newRefillCount;
     },
     calculateImpact() {
-      // Realizar los cálculos
       const bottlesPerRefill = 2;
       const plasticPerBottle = 0.012; // kg
       const carbonPerBottle = 0.08; // kg CO2
 
-      // Calcula el impacto
       this.bottlesSaved = this.refillCount * bottlesPerRefill;
       this.plasticSaved = this.bottlesSaved * plasticPerBottle;
       this.carbonSaved = this.bottlesSaved * carbonPerBottle;
+
+      // Generate a unique link based on your requirements
+      this.shareLink = this.generateUniqueLink();
     },
     shareImpact() {
-      // Implementa aquí la lógica para compartir utilizando Firebase
+      // Save the generated link to Firebase
+      console.log(database);
+      if (this.shareLink) {
+        const shareLinkId = database.ref('shareLinks').push().key;
+        database.ref(`shareLinks/${shareLinkId}`).set(this.shareLink);
+      }
+    },
+    generateUniqueLink() {
+      // Implement your logic to generate a unique link
+      // You can use a library like uuid or a custom algorithm
+      const uniqueId = Math.random().toString(36).substring(2, 15);
+      return `https://your-refill-impact.com/share/${uniqueId}`;
     },
   },
 };
 </script>
 
 <style>
-/* Add your global styles here */
+/* Specific component styles */
+#app {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4rem;
+  text-align: center;
+  font-size: 1.5em;
+}
 </style>
-

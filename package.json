@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "firebase": "^10.8.1",
     "vue-countup-v2": "^4.0.0",
     "vue-number-roller": "^1.0.3"
-  }, 
+  },
   "scripts": {
     "dev": "create-vite",
     "build": "vite build",

@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos específicos del componente */
+/* Specific component styles */
 .impact-display {
   display: flex;
   justify-content: space-around;
