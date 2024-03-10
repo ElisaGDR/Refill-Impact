@@ -9,11 +9,11 @@
 </template>
 
 <script>
+import { database } from './Firebase.js';
 import InputBox from './components/InputBox.vue';
 import CalculateButton from './components/CalculateButton.vue';
 import ImpactDisplay from './components/ImpactDisplay.vue';
 import ShareButton from './components/ShareButton.vue';
-import { database } from './Firebase.js';
 
 export default {
   components: {
@@ -56,8 +56,6 @@ export default {
       }
     },
     generateUniqueLink() {
-      // Implement your logic to generate a unique link
-      // You can use a library like uuid or a custom algorithm
       const uniqueId = Math.random().toString(36).substring(2, 15);
       return `https://your-refill-impact.com/share/${uniqueId}`;
     },
@@ -70,7 +68,7 @@ export default {
 #app {
   max-width: 100%;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
   font-size: 1.5em;
 }

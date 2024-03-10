@@ -39,12 +39,12 @@ export default {
 .impact-display {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .impact-box {
   text-align: center;
-  padding: 30px;
+  padding: 10px;
   border: 5px solid #4acb2d;
   border-radius: 30px;
   margin: 2%;

@@ -20,7 +20,7 @@
   <style scoped>
   /* Specific component styles */
   .calculate-button {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 2%;
    }

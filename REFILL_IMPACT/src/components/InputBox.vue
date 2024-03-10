@@ -35,7 +35,7 @@ label {
   font-weight: bold;
   color: beige;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 input {
   padding: 4px;

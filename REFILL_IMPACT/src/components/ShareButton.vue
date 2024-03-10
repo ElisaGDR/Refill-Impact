@@ -16,6 +16,9 @@
 </template>
 
 <script>
+
+import { database } from '../Firebase.js';
+
 export default {
   props: {
     shareLink: {
@@ -38,41 +41,48 @@ export default {
       this.loading = true;
       this.$emit('share-impact');
     },
-    copyToClipboard() {
+    async copyToClipboard() {
       const input = this.$el.querySelector('.form-control');
       input.select();
-      document.execCommand('copy');
+
+      try {
+        await navigator.clipboard.writeText(input.value);
+        console.log('Text successfully copied to clipboard');
+      } catch (err) {
+        console.error('Unable to copy text to clipboard', err);
+      }
     },
   },
-  
+
 };
 </script>
 
 <style scoped>
 /* Specific component styles */
 .share-button {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   border-radius: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 2%;
 }
+
 .title {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: beige; 
-  padding: 5%;
+  color: beige;
+  padding: 2%;
 }
+
 .form-control {
   padding: 4px;
   width: 20%;
   box-sizing: border-box;
   text-align: center;
-  background-color: beige; 
+  background-color: beige;
   border-radius: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .btn {
   border-radius: 50px;
 }
 </style>
-
-  
