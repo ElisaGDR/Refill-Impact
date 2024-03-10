@@ -1,7 +1,46 @@
-# Vue 3 + Vite
+# Refill Impact 
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A Vue.js application designed to empower users to visualize their positive environmental impact by tracking the number of water refills.
 
-## Recommended IDE Setup
+---
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Installation Instructions
+
+### Clone the Project and Install Dependencies
+
+`git clone https://github.com/ElisaGDR/Refill-Impact`
+
+`cd REFILL_IMPACT`
+
+`npm install`
+
+---
+
+## Usage
+
+### Run in Development Mode
+
+`cd REFILL_IMPACT`
+
+`npm install --save-dev create-vite`
+
+`npm run dev`
+
+#### Accept the recommendation that will appear to install Vue-Official.
+
+---
+
+## Build Instructions
+
+### Build for Production
+
+`npm run build`
+
+---
+
+## Dependencies and requirements:
+
+- Vue.js: Version 3.4.15
+- Vue Router: Version 4.2.5
+- Vite: Version 5.0.11
+- Vite Vue Plugin: Version 5.0.3

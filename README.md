@@ -2,27 +2,41 @@
 
 A Vue.js application designed to empower users to visualize their positive environmental impact by tracking the number of water refills.
 
+---
+
 ## Installation Instructions
 
 ### Clone the Project and Install Dependencies
 
-`git clone https://github.com/your-username/Refill-Impact-Dashboard.git`
+`git clone https://github.com/ElisaGDR/Refill-Impact`
 
-`cd Refill-Impact-Dashboard`
+`cd REFILL_IMPACT`
 
 `npm install`
+
+---
 
 ## Usage
 
 ### Run in Development Mode
 
+`cd REFILL_IMPACT`
+
+`npm install --save-dev create-vite`
+
 `npm run dev`
+
+#### Accept the recommendation that will appear to install Vue-Official.
+
+---
 
 ## Build Instructions
 
 ### Build for Production
 
 `npm run build`
+
+---
 
 ## Dependencies and requirements:
 
