@@ -1,3 +1,5 @@
+<!-- ImpactDisplay.vue -->
+
 <template>
   <div class="impact-display">
     <div class="impact-box">
@@ -41,7 +43,6 @@ export default {
   justify-content: space-around;
   margin-bottom: 5px;
 }
-
 .impact-box {
   text-align: center;
   padding: 10px;
@@ -49,13 +50,11 @@ export default {
   border-radius: 30px;
   margin: 2%;
 }
-
 .impact-box h4 {
   margin-bottom: 10px;
   color: beige; 
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 div {
   color: beige; 
   font-family: Georgia, 'Times New Roman', Times, serif;

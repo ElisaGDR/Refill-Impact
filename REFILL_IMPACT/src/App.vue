@@ -3,7 +3,6 @@
     <InputBox @refill-count-change="updateRefillCount" />
     <CalculateButton @calculateImpact="calculateImpact" />
     <ImpactDisplay :bottlesSaved="bottlesSaved" :plasticSaved="plasticSaved" :carbonSaved="carbonSaved" />
-    <!-- Update the listener to use the correct event name -->
     <ShareButton :shareLink="shareLink" @share-impact="shareImpact" />
   </div>
 </template>
@@ -43,12 +42,11 @@ export default {
       this.bottlesSaved = this.refillCount * bottlesPerRefill;
       this.plasticSaved = this.bottlesSaved * plasticPerBottle;
       this.carbonSaved = this.bottlesSaved * carbonPerBottle;
-
-      // Generate a unique link based on your requirements
+      // The unique link 
       this.shareLink = this.generateUniqueLink();
     },
     shareImpact() {
-      // Save the generated link to Firebase
+      // Saving the generated link to Firebase
       console.log(database);
       if (this.shareLink) {
         const shareLinkId = database.ref('shareLinks').push().key;

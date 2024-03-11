@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 import { database } from '../Firebase.js';
 
 export default {
@@ -65,13 +64,11 @@ export default {
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 2%;
 }
-
 .title {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: beige;
   padding: 2%;
 }
-
 .form-control {
   padding: 4px;
   width: 20%;
@@ -81,7 +78,6 @@ export default {
   border-radius: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .btn {
   border-radius: 50px;
 }
