@@ -10,7 +10,7 @@
   export default {
     methods: {
       calculateImpact() {
-        this.$emit('calculate-impact'); // Event to notify the father component
+        this.$emit('calculateImpact'); // Event to notify the father component
       },
     },
   };

@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import { database } from '../Firebase.js';
-
 export default {
   props: {
     shareLink: {
