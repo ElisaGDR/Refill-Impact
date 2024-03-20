@@ -1,5 +1,3 @@
-<!-- ShareButton.vue -->
-
 <template>
   <div class="share-button">
     <button @click="shareImpact" class="btn btn-success" :disabled="loading">
@@ -16,10 +14,24 @@
 </template>
 
 <script>
-import { firestore } from '../Firebase.js';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../Firebase.js';
 
 export default {
   props: {
+    // From App.vue
+    bottlesSaved: {
+      type: Number,
+      default: 0,
+    },
+    plasticSaved: {
+      type: Number,
+      default: 0,
+    },
+    carbonSaved: {
+      type: Number,
+      default: 0,
+    },
     shareLink: {
       type: String,
       default: '',
@@ -40,12 +52,12 @@ export default {
     async shareImpact() {
       this.loading = true;
       try {
-        const docRef = await firestore.collection('sharelinks').add({
+        // Add data to Firestore
+       const docRef = await addDoc(collection(db, 'sharelinks'), { 
           bottlesSaved: this.bottlesSaved,
           plasticSaved: this.plasticSaved,
           carbonSaved: this.carbonSaved,
         });
-        console.log(bottlesSaved);
         this.shareUrl = `http://localhost:5173/share/${docRef.id}`;
         this.loading = false;
       } catch (error) {
@@ -68,7 +80,7 @@ export default {
 </script>
 
 <style scoped>
-/* Specific component styles */
+
 .share-button {
   margin-bottom: 10px;
   border-radius: 50px;

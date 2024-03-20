@@ -3,7 +3,7 @@
     <InputBox @refill-count-change="updateRefillCount" />
     <CalculateButton @calculateImpact="calculateImpact" />
     <ImpactDisplay :bottlesSaved="bottlesSaved" :plasticSaved="plasticSaved" :carbonSaved="carbonSaved" />
-    <ShareButton :shareLink="shareLink" @share-impact="shareImpact" />
+    <ShareButton :shareLink="shareLink" :bottlesSaved="bottlesSaved" :plasticSaved="plasticSaved" :carbonSaved="carbonSaved" @shareImpact="shareImpact" />
   </div>
 </template>
 
