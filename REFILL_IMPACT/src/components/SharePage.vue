@@ -42,11 +42,11 @@
             this.carbonSaved = data.carbonSaved;
             this.loading = false;
           } else {
-            console.error('El documento no existe');
+            console.error('The document do not exist');
             this.loading = false;
           }
         } catch (error) {
-          console.error('Error al obtener los datos del documento:', error);
+          console.error('Can not get the document:', error);
           this.loading = false;
         }
       }

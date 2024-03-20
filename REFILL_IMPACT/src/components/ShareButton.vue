@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       loading: false,
-      shareUrl: this.shareLink, // Inicializamos shareUrl con el enlace proporcionado por App.vue
+      shareUrl: this.shareLink, // ShareUrl from App.vue
     };
   },
   methods: {
