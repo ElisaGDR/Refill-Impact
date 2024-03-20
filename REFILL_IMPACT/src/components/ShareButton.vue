@@ -3,7 +3,7 @@
     <button @click="shareImpact" class="btn btn-success" :disabled="loading">
       {{ loading ? 'Sharing...' : 'Share your Impact' }}
     </button>
-    <div v-if="shareLink" class="share-link">
+    <div v-if="shareUrl" class="share-link">
       <p class="title">Share this link:</p>
       <div class="input-group">
         <input :value="shareUrl" readonly class="form-control" />
@@ -19,7 +19,10 @@ import { db } from '../Firebase.js';
 
 export default {
   props: {
-    // From App.vue
+    shareLink: {
+      type: String,
+      default: '',
+    },
     bottlesSaved: {
       type: Number,
       default: 0,
@@ -32,28 +35,19 @@ export default {
       type: Number,
       default: 0,
     },
-    shareLink: {
-      type: String,
-      default: '',
-    },
   },
   data() {
     return {
       loading: false,
-      shareUrl: '',
+      shareUrl: this.shareLink, // Inicializamos shareUrl con el enlace proporcionado por App.vue
     };
-  },
-  computed: {
-    firebaseLink() {
-      return `http://localhost:5173/share/${this.shareLink}`;
-    },
   },
   methods: {
     async shareImpact() {
       this.loading = true;
       try {
         // Add data to Firestore
-       const docRef = await addDoc(collection(db, 'sharelinks'), { 
+        const docRef = await addDoc(collection(db, 'sharelinks'), { 
           bottlesSaved: this.bottlesSaved,
           plasticSaved: this.plasticSaved,
           carbonSaved: this.carbonSaved,
