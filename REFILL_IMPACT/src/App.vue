@@ -43,7 +43,12 @@ export default {
       this.plasticSaved = this.bottlesSaved * plasticPerBottle;
       this.carbonSaved = this.bottlesSaved * carbonPerBottle;
       // The unique link 
-      this.shareLink = this.generateUniqueLink();
+      // this.shareLink = this.generateUniqueLink();
+      this.$emit('impact-calculated', {
+        bottlesSaved: this.bottlesSaved,
+        plasticSaved: this.plasticSaved,
+        carbonSaved: this.carbonSaved,
+      });
     },
     shareImpact() {
       // Saving the generated link to Firebase

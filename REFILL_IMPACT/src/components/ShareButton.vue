@@ -8,7 +8,7 @@
     <div v-if="shareLink" class="share-link">
       <p class="title">Share this link:</p>
       <div class="input-group">
-        <input :value="firebaseLink" readonly class="form-control" />
+        <input :value="shareUrl" readonly class="form-control" />
         <button @click="copyToClipboard" class="btn btn-success">Copy</button>
       </div>
     </div>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { firestore } from '../Firebase.js';
+
 export default {
   props: {
     shareLink: {
@@ -26,22 +28,34 @@ export default {
   data() {
     return {
       loading: false,
+      shareUrl: '',
     };
   },
   computed: {
     firebaseLink() {
-      return `https://refill-impact.firebaseapp.com/${this.shareLink}`;
+      return `http://localhost:5173/share/${this.shareLink}`;
     },
   },
   methods: {
-    shareImpact() {
+    async shareImpact() {
       this.loading = true;
-      this.$emit('share-impact');
+      try {
+        const docRef = await firestore.collection('sharelinks').add({
+          bottlesSaved: this.bottlesSaved,
+          plasticSaved: this.plasticSaved,
+          carbonSaved: this.carbonSaved,
+        });
+        console.log(bottlesSaved);
+        this.shareUrl = `http://localhost:5173/share/${docRef.id}`;
+        this.loading = false;
+      } catch (error) {
+        console.error('Error sharing impact:', error);
+        this.loading = false;
+      }
     },
     async copyToClipboard() {
       const input = this.$el.querySelector('.form-control');
       input.select();
-
       try {
         await navigator.clipboard.writeText(input.value);
         console.log('Text successfully copied to clipboard');
@@ -50,7 +64,6 @@ export default {
       }
     },
   },
-
 };
 </script>
 
@@ -62,11 +75,13 @@ export default {
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 2%;
 }
+
 .title {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: beige;
   padding: 2%;
 }
+
 .form-control {
   padding: 4px;
   width: 20%;
@@ -76,6 +91,7 @@ export default {
   border-radius: 50px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .btn {
   border-radius: 50px;
 }
