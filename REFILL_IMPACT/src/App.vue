@@ -60,7 +60,7 @@ export default {
     },
     generateUniqueLink() {
       const uniqueId = Math.random().toString(36).substring(2, 15);
-      return `https://your-refill-impact.com/share/${uniqueId}`;
+      return `/share/${uniqueId}`;
     },
   },
 };
