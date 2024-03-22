@@ -52,7 +52,8 @@ export default {
           plasticSaved: this.plasticSaved,
           carbonSaved: this.carbonSaved,
         });
-        this.shareUrl = `http://localhost:5173/share/${docRef.id}`;
+        const base = window.location.href;
+        this.shareUrl = `${base}share/${docRef.id}`;
         this.loading = false;
       } catch (error) {
         console.error('Error sharing impact:', error);
