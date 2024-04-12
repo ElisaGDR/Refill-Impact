@@ -10,7 +10,7 @@ A Vue.js application designed to empower users to visualize their positive envir
 
 `git clone https://github.com/ElisaGDR/Refill-Impact`
 
-`cd REFILL_IMPACT`
+`cd Refill-Impact`
 
 `npm install`
 
@@ -20,9 +20,9 @@ A Vue.js application designed to empower users to visualize their positive envir
 
 ### Run in Development Mode
 
-`cd REFILL_IMPACT`
+`cd Refill-Impact`
 
-`npm install --save-dev create-vite`
+`npm install`
 
 `npm run dev`
 
